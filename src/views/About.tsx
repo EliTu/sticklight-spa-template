@@ -19,7 +19,7 @@ export const About: React.FC = () => {
     },
     {
       title: "Deterministic Installs",
-      desc: "Verifies the deployment runner utilizes a clean, locked `package-lock.json` with `npm ci` for exact reproduction. This guarantees there are no package mismatch anomalies between local and edge servers.",
+      desc: "Verifies the deployment runner utilizes a clean, locked `yarn.lock` with `yarn install --frozen-lockfile` for exact reproduction. This guarantees there are no package mismatch anomalies between local and edge servers.",
       icon: Shield,
       color: "from-emerald-400 to-teal-500",
       bg: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"

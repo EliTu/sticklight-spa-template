@@ -13,8 +13,8 @@ This repository is designed to test and validate Sticklight Cloud build, deploym
    - Designed to test that your edge CDN (e.g. Cloudflare Workers / Cloudflare Pages) intercepts requests to sub-routes (like `/about` and `/status`) and serves `index.html` as a fallback rather than a 404, allowing the client-side router to boot and load the correct view.
 
 2. **Deterministic Installs**:
-   - Shipped with a clean, locked dependency manifest in `package-lock.json`.
-   - Ensures the Sticklight build runner can execute `npm ci` for identical, deterministic local vs production builds.
+   - Shipped with a clean, locked dependency manifest in `yarn.lock`.
+   - Ensures the Sticklight build runner can execute `yarn install --frozen-lockfile` for identical, deterministic local vs production builds.
 
 3. **Build-Time Environment Injection**:
    - Reads environment variables prefixed with `VITE_` (e.g., `VITE_APP_TITLE` and `VITE_CUSTOM_MESSAGE`).
@@ -57,18 +57,18 @@ sticklight-spa-template/
 ## 🛠️ Local Development
 
 ### 1. Prerequisites
-Ensure you have Node.js (version 18 or higher) and npm installed.
+Ensure you have Node.js (version 18 or higher) and yarn installed.
 
 ### 2. Install Dependencies
-Run a clean install of dependencies to generate or verify `package-lock.json`:
+Run a clean install of dependencies to generate or verify `yarn.lock`:
 ```bash
-npm install
+yarn install
 ```
 
 ### 3. Run Development Server
 Spin up the local hot-reloading development server on port `3000`:
 ```bash
-npm run dev
+yarn dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -81,7 +81,7 @@ To simulate how the CDN (such as Sticklight Edge or Cloudflare Workers) serves c
 ### 1. Build the Static Site
 Compile, transpile, and bundle files into the production-ready `dist` folder:
 ```bash
-npm run build
+yarn build
 ```
 
 ### 2. Simulate Production Routing with SPA Fallback
@@ -101,12 +101,12 @@ Verify that:
 
 To publish this project to Sticklight Cloud:
 
-1. **Verify Configs**: Double-check that your Sticklight configuration maps your build script to `npm run build` and your output folder to `dist`.
+1. **Verify Configs**: Double-check that your Sticklight configuration maps your build script to `yarn build` and your output folder to `dist`.
 2. **Configure Environment Variables**:
    Set the following variables in your Sticklight project dashboard so they are injected during compile time:
    - `VITE_APP_TITLE` = `My Live Sticklight App`
    - `VITE_CUSTOM_MESSAGE` = `Hello from the live Sticklight Edge Network!`
 3. **Commit & Push**: Push this codebase to your connected Git repository. The automated deployment pipeline will execute:
-   - `npm ci`
-   - `npm run build`
+   - `yarn install --frozen-lockfile`
+   - `yarn build`
    - Edge assets sync & SPA Worker deployment.

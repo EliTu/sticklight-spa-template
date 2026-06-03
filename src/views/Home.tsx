@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
             Deploy & Test with <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">Sticklight Cloud</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
-            This repository is a fully functional Single Page Application designed to validate build-time environment variable injection, deterministic npm installs, and edge CDN fallback routing.
+            This repository is a fully functional Single Page Application designed to validate build-time environment variable injection, deterministic Yarn installs, and edge CDN fallback routing.
           </p>
         </div>
       </div>
