@@ -8,7 +8,7 @@
 		"build": "vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"custom-verify": "echo '=== STICKLIGHTT CUSTOM DEPLOYMENT VERIFICATION!!! ===' && echo 'Verifying Environment Variables:' && echo \"VITE_APP_TITLE is: $VITE_APP_TITLE\" && echo \"VITE_CUSTOM_MESSAGE is: $VITE_CUSTOM_MESSAGE\""
+		"custom-verify": "echo '=== STICKLIGHT CUSTOM DEPLOYMENT VERIFICATION!!! ===' && echo 'Verifying Environment Variables:' && echo \"VITE_APP_TITLE is: $VITE_APP_TITLE\" && echo \"VITE_CUSTOM_MESSAGE is: $VITE_CUSTOM_MESSAGE\""
 	},
 	"dependencies": {
 		"lucide-react": "^0.400.0",
